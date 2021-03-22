@@ -27,17 +27,17 @@
 ## 3.5 使用 tsfresh 进行时间序列特征处理
 **Tsfresh（TimeSeries Fresh）**是一个Python第三方工具包。 它可以自动计算大量的时间序列数据的特征。此外，该包还包含了特征重要性评估、特征选择的方法，因此，不管是基于时序数据的分类问题还是回归问题，tsfresh都会是特征提取一个不错的选择。官方文档：[Introduction — tsfresh 0.17.1.dev24+g860c4e1 documentation](https://tsfresh.readthedocs.io/en/latest/text/introduction.html)
 
-**以下部分由于内存不足未能完成（正在想办法解决中），不过了解了tsfresh相关知识，这是第一次接触到tsfresh，大概了解了它的作用，相关原理还需要进一步消化
-
-
+**以下部分由于本地内存不足，采用云天池实验室完成。了解了tsfresh相关知识，这是第一次接触到tsfresh，大概了解了它的作用，相关原理还需要进一步消化
 
 1. 特征提取
+![](https://img.imgdb.cn/item/60588bfd8322e6675c9e1f8c.jpg)
 
 2. 特征选择 
 train_features中包含了heartbeat_signals的779种常见的时间序列特征（所有这些特征的解释可以去看官方文档），这其中有的特征可能为NaN值（产生原因为当前数据不支持此类特征的计算），使用以下方式去除NaN值：
+![](https://img.imgdb.cn/item/60588c4e8322e6675c9e481b.jpg)
 
 接下来，按照特征和响应变量之间的相关性进行特征选择，这一过程包含两步：首先单独计算每个特征和响应变量之间的相关性，然后利用Benjamini-Yekutieli procedure [1] 进行特征选择，决定哪些特征可以被保留。
-
+![](https://img.imgdb.cn/item/60588c758322e6675c9e5b28.jpg)
 
 ## References
 
